@@ -1,0 +1,67 @@
+{
+  // npx eslint .
+  // npx eslint . --fix
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  // "extends": [
+  //   "eslint:recommended", // It disables core ESLint rules that are already checked by the TypeScript compiler.
+  //   "plugin:@typescript-eslint/recommended", // build in recommended eslint extentions 
+  //   "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  //   // "prettier" // Using this config by adding it to the end of your :extends
+  // ],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json" // "plugin:@typescript-eslint/recommended-requiring-type-checking" 이거 쓸때 필요
+    ]
+  },
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "eol-last": [
+      "error",
+      "never"
+    ],
+    "linebreak-style": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "global-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "no-shadow": "off",
+    "no-empty-pattern": 0,
+    "no-alert": 0
+  },
+  // "settings": {
+  //   "import/parsers": {
+  //     "@typescript-eslint/parser": [
+  //       ".ts"
+  //       // ".js"
+  //     ]
+  //   },
+  //   "import/resolver": {
+  //     "typescript": "./tsconfig.json"
+  //   }
+  // },
+  "ignorePatterns": [
+    "dist/**"
+  ]
+}

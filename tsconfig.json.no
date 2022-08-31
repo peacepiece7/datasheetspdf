@@ -1,0 +1,48 @@
+{
+    // "compilerOptions" 속성은 생략될 수 있으며 **생략하면 컴파일러의 기본 값** 이 사용됩니다.
+    "compilerOptions": {
+        "module": "ES6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "lib": [
+            "ES2020",
+            "DOM"
+        ],
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "moduleResolution": "Node",
+        "target": "es5",
+        "typeRoots": [
+            "./typings",
+            "./node_modules/@types"
+        ], //  ./typings의 모든 패키지가 포함되며 ./node_modules/@types의 패키지는 포함되지 않습니다. 지금은 node_modules/@types가 포함되어 있습니다
+        "types": [
+            "node",
+            "lodash",
+            "express"
+        ] // "typeRoots"에서 해당 패키지만 type을 가져온다. node_modules/@types/* 아래의 다른 패키지는 포함되지 않습니다. 지금은 node_modules/@types가 포함되어 있습니다
+    },
+    // * 또는 . *만 있다면, 지원하는 확장자 파일만 포함됩니다 (예: 기본적으로는 .ts, .tsx 및 .d.ts이고, allowJs true로 설정되어 있다면 .js와 .jsx).
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    //  상대 또는 절대 파일 경로 목록을 갖습니다. ** include 중 exclude하고 싶은게 있다면 files에 작성**
+    "files": [
+        "index.ts",
+    ],
+}
+/**
+모든 extends된 tsconfig중 겹치는 옵션이 있을 경우
+IDE에서 아래 코드를 저장하면 noImplicitAny : true로 고정됨
+{
+   "compileOnSave": true,
+   "compilerOptions": {
+       "noImplicitAny" : true
+   }
+}
+**/
+// 컴파일러 옵션 https://typescript-kr.github.io/pages/compiler-options.html 
